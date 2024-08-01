@@ -1,0 +1,25 @@
+.container {
+  width: 450px;
+  border-radius: 5px;
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+textarea {
+  width: 400px;
+  background-color: #ffe5ad;
+  border-radius: 5px;
+  border: 1px solid #e9cf07;
+  padding: 10px;
+  resize: none;
+  color: #3e001f;
+  font-family: inherit;
+}
+textarea:focus {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  outline: none;
+}
