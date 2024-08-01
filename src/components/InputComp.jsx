@@ -4,7 +4,7 @@ import "./InputComp.css";
 
 const InputComp = () => {
   const { speak, voices } = useSpeechSynthesis();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("Hello, from divya");
   const [voiceSelection, setVoiceSelecetion] = useState("");
   const [speedSelection, setSpeedSelection] = useState(1);
 
@@ -20,6 +20,9 @@ const InputComp = () => {
       rate: speedSelection,
     });
   };
+  const handleReset = () => {
+    setValue("");
+  };
 
   return (
     <div className="container">
@@ -28,8 +31,12 @@ const InputComp = () => {
         cols="30"
         rows="10"
         onChange={(e) => setValue(e.target.value)}
+        value={value}
+        placeholder="Provide text in any language and hear it spoken aloud"
       />
       <br />
+      <button onClick={handleReset}>Reset Textbox</button>
+
       <select
         onChange={(e) => setVoiceSelecetion(e.target.value)}
         value={voiceSelection}
