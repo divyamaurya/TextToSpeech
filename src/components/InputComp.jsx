@@ -3,17 +3,21 @@ import { useSpeechSynthesis } from "react-speech-kit";
 import "./InputComp.css";
 
 const InputComp = () => {
-  const { speak, voices, rate } = useSpeechSynthesis();
+  const { speak, voices } = useSpeechSynthesis();
   const [value, setValue] = useState("");
   const [voiceSelection, setVoiceSelecetion] = useState("");
-  const [speedSelection, setSpeedSelection] = useState();
+  const [speedSelection, setSpeedSelection] = useState(1);
 
-  const speeds = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
+  const speeds = [
+    { rate: "0.5x", value: 0.5 },
+    { rate: "1.5x", value: 1.5 },
+    { rate: "2x", value: 2 },
+  ];
   const handleSpeech = () => {
-    console.log("rate", rate);
     speak({
       text: value,
-      voice: voices.find((voice) => voice.name === voiceSelection),
+      voice: voices[voiceSelection],
+      rate: speedSelection,
     });
   };
 
@@ -30,7 +34,7 @@ const InputComp = () => {
         onChange={(e) => setVoiceSelecetion(e.target.value)}
         value={voiceSelection}
       >
-        <option value="">Default</option>
+        <option value="">Default Voice</option>
         {voices.map((voice, index) => {
           return (
             <option key={voice.name} value={index}>
@@ -43,10 +47,10 @@ const InputComp = () => {
         onChange={(e) => setSpeedSelection(e.target.value)}
         value={speedSelection}
       >
-        <option value="">1</option>
-        {speeds.map((speed, index) => {
+        <option value="1">Default Audio Speed</option>
+        {speeds.map((speed) => {
           return (
-            <option key={speed.rate} value={index}>
+            <option key={speed.rate} value={speed.value}>
               {speed.rate}
             </option>
           );
