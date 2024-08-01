@@ -23,3 +23,31 @@ textarea:focus {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   outline: none;
 }
+select {
+  width: 400px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #3e001f;
+  font-family: inherit;
+  font-size: medium;
+}
+select::-webkit-scrollbar {
+  width: 10px;
+}
+select::-webkit-scrollbar-track {
+  background-color: #ffe5ad;
+}
+select::-webkit-scrollbar-thumb {
+  background-color: #f11a7b;
+  border-radius: 5px;
+}
+select option {
+  background-color: #ffe5ad;
+  padding: 10px;
+}
+select option:hover {
+  background-color: #f11a7b;
+}
