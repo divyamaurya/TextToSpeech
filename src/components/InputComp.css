@@ -9,6 +9,15 @@
   padding: 20px 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.container div:first-child {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container div:first-child img {
+  margin-right: 10px;
+}
 textarea {
   width: 400px;
   background-color: #ffe5ad;
@@ -19,6 +28,7 @@ textarea {
   color: #3e001f;
   font-family: inherit;
   font-size: large;
+  margin-top: 20px;
 }
 textarea:focus {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

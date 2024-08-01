@@ -26,7 +26,10 @@ const InputComp = () => {
 
   return (
     <div className="container">
-      <h2>Text to Speech</h2>
+      <div>
+        <img src="./speech_to_text.svg" />
+        <h2>Text to Speech</h2>
+      </div>
       <textarea
         cols="30"
         rows="10"
